@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Muli:ital,wght@0,400;0,500;0,600;1,700&display=swap');
 
+/* GENERAL SECTIONS */
 *{
   box-sizing: border-box;
 }
@@ -21,32 +22,37 @@ main{
   background-size: contain;
 }
 section.first-container{
-  width: 320px;
-  height: 80%;
+  width: 25%;
+  height: 540px;
   background-color: white;
   margin-right: 20px;
   padding: 30px;
   border-radius: 10px;
 }
 section.second-container{
-  width: 320px;
-  height: 80%;
+  width: 25%;
+  height: 540px;
   background-color: white;
   margin-left: 20px;
   padding: 30px;
   border-radius: 10px;
 }
+
+/* FIRST CONTAINER */
 div.x-icon{
   display: flex;
   justify-content: flex-end;
   margin-bottom: 20px;
 }
+img.x-icon{
+  transition: 1s;
+}
 img.search{
   width: 16px;
   height: 16px;
   position: absolute;
-  top: 150px;
-  left: 380px;
+  top: 147px;
+  left: 368px;
 }
 input[type=text]{
   width: 100%;
@@ -55,6 +61,7 @@ input[type=text]{
   border: 1px solid #B5B7CE;
   background-color: #f4f6fe;
   margin-bottom: 30px;
+  transition: 0.7s;
 }
 div.menu-dropdown{
   display: flex;
@@ -62,18 +69,18 @@ div.menu-dropdown{
   align-items: center;
   justify-content: center;
 }
-p.menu-dropdown-1{
+p.menu-dropdown-1>a, p.menu-dropdown-2>a, p.menu-dropdown-1{
   font-size: 14px;
   letter-spacing: 0.6px;
+  text-decoration: none;
+  color: black;
   margin-bottom: 20px;
   cursor: pointer;
+  transition: 0.7s;
 }
 p.menu-dropdown-2{
-  font-size: 14px;
-  letter-spacing: 0.6px;
   margin-top: 0;
-  margin-bottom: 20px;
-  cursor: pointer;
+  transition: 1s;
 }
 button.btn{
   font-size: 15px;
@@ -86,6 +93,7 @@ button.btn{
   margin-bottom: 30px;
   box-shadow: 0px 13px 20px -10px rgba(114, 117, 230, 0.65);
   cursor: pointer;
+  transition: 0.8s;
 }
 hr{
   border: 1px solid #dcdded;
@@ -112,11 +120,13 @@ span.pro{
 }
 p.view-account{
   font-size: 14.5px;
+  transition: 0.5s;
 }
 img.logout{
   width: 14px;
   height: 14px;
   cursor: pointer;
+  transition: 0.5s;
 }
 div.logout{
   display: flex;
@@ -126,16 +136,24 @@ div.logout{
 p.logout{
   margin-left: 5px;
   cursor: pointer;
+  transition: 0.5s;
 }
 p.date{
   font-size: 20px;
   font-weight: 600;
+}
+
+/* SECOND CONTAINER */
+img.arrow{
+  transition: 0.7s;
+  cursor: pointer;
 }
 p.switch-report{
   font-size: 13.5px;
   letter-spacing: 0.6px;
   color: #7c7ed5;
   margin-top: -15px;
+  cursor: pointer;
 }
 div.date-info{
   margin-bottom: 30px;
@@ -161,6 +179,7 @@ div.opened{
   grid-row: 1/1;
   border-radius: 10px;
   border: solid 1px #e6e9f1;
+  transition: 1s;
 }
 div.closed{
   grid-column: 2/2;
@@ -169,18 +188,21 @@ div.closed{
   color: white;
   background: #7c7ed5;
   box-shadow: 0px 13px 20px -10px rgba(114, 117, 230, 0.65);
+  transition: 1s;
 }
 div.bounced{
   grid-column: 1/1;
   grid-row: 2/2;
   border-radius: 10px;
   border: solid 1px #e6e9f1;
+  transition: 1s;
 }
 div.unsubscribed{
   grid-column: 2/2;
   grid-row: 2/2;
   border-radius: 10px;
   border: solid 1px #e6e9f1;
+  transition: 1s;
 }
 p.stats-2{
   font-size: 13.5px;
@@ -189,4 +211,192 @@ p.stats-3{
   font-size: 18px;
   font-weight: 600;
   margin-top: -10px;
+}
+div.opens{
+  margin-bottom: 37px;
+}
+
+/* HOVER STATES */
+/* HOVER OVER FIRST CONTAINER */
+img.x-icon:hover{
+  transform: rotate(360deg) scale(1.5);
+  transition: 1s;
+}
+input[type=text]:hover{
+  box-shadow: inset 5px 5px 5px #cbced1, inset -8px -8px 8px white;
+  transition: 1s;
+}
+p.menu-dropdown-1>a:hover, p.menu-dropdown-2>a:hover, p.menu-dropdown-1:hover, p.menu-dropdown-2:hover{
+  transform: scale(1.3);
+  color: #7c7ed5;
+  transition: 1s;
+}
+button.btn:hover{
+  background: linear-gradient(90deg, rgb(40, 218, 40), rgb(41, 167, 41), rgb(40, 218, 40));
+  background-size: 400%;
+  transform: scale(1.05);
+  transition: 1s;
+  animation: button 5s ease-in-out infinite;
+}
+img.profile-image:hover{
+  cursor: pointer;
+}
+p.view-account:hover{
+  color: #7c7ed5;
+  cursor: pointer;
+}
+p.logout:hover{
+  color: #7c7ed5;
+}
+/* HOVER OVER SECOND CONTAINER */
+img.arrow:hover{
+  transform: rotate(360deg) scale(1.5);
+  transition: 1s;
+}
+
+/* FOCUS STATE */
+input[type=text]:focus{
+  outline: white;
+}
+
+/* KEYFRAMES */
+@keyframes button {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+div.opened:hover, div.closed:hover, div.bounced:hover, div.unsubscribed:hover{
+  box-shadow: 5px 5px 5px #cbced1, -8px -8px 8px white;
+  transition: 1s;
+}
+
+
+/* MEDIA QUERIES FOR WIDTHS */
+@media screen and (max-width: 1280px){
+  img.search{
+    top: 214px;
+    left: 352px;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  img.search{
+    top: 198px;
+    left: 237px;
+  }
+  section.first-container{
+    width: 30%;
+  }
+  section.second-container{
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 920px){
+  img.search{
+    top: 198px;
+    left: 125px;
+  }
+  section.first-container{
+    width: 40%;
+  }
+  section.second-container{
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 800px){
+  img.search{
+    top: 455px;
+    left: 110px;
+  }
+}
+
+@media screen and (max-width: 768px){
+  img.search{
+    top: 326px;
+    left: 110px;
+  }
+}
+
+@media screen and (max-width: 740px){
+  img.search{
+    left: 88px;
+  }
+}
+
+@media screen and (max-width: 668px){
+  section.first-container, section.second-container{
+    width: 45%;
+  }
+  img.search{
+    left: 71px;
+  }
+}
+
+@media screen and (max-width: 570px){
+  section.first-container, section.second-container{
+    width: 45.95%;
+  }
+  img.search{
+    left: 65px;
+  }
+}
+
+@media screen and (max-width: 416px){
+  img.search{
+    top: 104px;
+    left: 93px;
+  }
+  section.first-container{
+    width: 320px;
+    margin: 20px 0 10px 0;
+  }
+  section.second-container{
+    width: 320px;
+    margin: 10px 0 20px 0;
+  }
+}
+
+@media screen and (max-width: 378px){
+  img.search{
+    top: 104px;
+    left: 75px;
+  }
+}
+
+@media screen and (max-width: 362px){
+  img.search{
+    top: 104px;
+    left: 75px;
+  }
+  section.first-container, section.second-container{
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 324px){
+  img.search{
+    top: 104px;
+    left: 67px;
+  }
+  section.first-container, section.second-container{
+    width: 280px;
+  }
+}
+
+/* MEDIA QUERY FOR HEIGHT */
+@media screen and (max-height: 414px){
+  img.search{
+    top: 104px;
+  }
+  section.first-container, section.second-container{
+    margin: 20px auto;
+  }
 }
